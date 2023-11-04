@@ -72,17 +72,11 @@ getAllQuestions(){
     this.moduleId= this.id
     console.log(this.subjectId)
     console.log(this.moduleId)
-   // this.option= this.questionList.options
+   
     this.contentS= this.questionList[0].content_id
     console.log(this.questionList)
     console.log("Current Question"+this.contentS)
   })
- /* setTimeout(() => {
-    this.contentService.getOne(this.id).subscribe(data=>{
-      this.currContent= data
-      console.log("Current Content"+this.currContent)
-    })
-  }, 1000);*/
   
   
 setTimeout(() => {
@@ -92,15 +86,14 @@ setTimeout(() => {
     this.content = res;
     this.contentIndex= res.length -1;
     this.lastcontent= res[this.contentIndex].id
-    console.log(" Record in Number:"+this.contentS)
+    //console.log(" Record in Number:"+this.contentS)
     for(let i=0; i<res.length -1; i++){
       if(this.contentS==res[i].id){
         this.k= res[i+1].id;
       }
     }
-      //this.nextContent = this.findContent(this.contentS, res)
-      //console.log("Next Content"+this.nextContent)
-      console.log("Next Content"+this.k)
+      
+      //console.log("Next Content"+this.k)
   })
   
   
@@ -114,20 +107,6 @@ setTimeout(() => {
   
  
 }
-/*findContent(item:any, items: any){
-var k
-
-  for(let i=0; i<items.length -1; i++){
-    if(item==item[i].id){
-      return items[i+1];
-    }
-    console.log("Items"+i)
-    
-    
-  }
-   
-  
-}*/
 addRecord() {
     
   this.recordModelObj.subject_id = this.subjectId;
@@ -148,11 +127,6 @@ addRecord() {
     let ref = document.getElementById('clear');
     ref?.click();
     
-    
-
-    //this.signupForm.reset()
-    //this.router.navigate(['login'])
-    //this.getAllData();
   },
     err => {
       alert("Error Occur, Try Again !")
